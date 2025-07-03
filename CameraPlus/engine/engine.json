@@ -1,0 +1,187 @@
+{
+  "version": "4.2.0-e1",
+
+  "fields": [
+  
+	{
+      "key": "camplus_status",
+      "label": "CameraPlus Usage",
+      "group": "CameraPlus (Default)",
+      "type": "select",
+      "options": [
+        [0, "Enable CameraPlus Plugin"],
+		[1, "Disable CameraPlus Plugin"]
+      ],
+      "cType": "UBYTE",
+      "defaultValue": 0
+    },
+
+
+	{
+      "key": "camplus_init",
+      "label": "Default Initial Configuration",
+      "group": "CameraPlus (Default)",
+      "type": "select",
+      "options": [
+        [0, "Prefer Plugin Defaults"],
+		[1, "Prefer Scene Defaults Over Plugin Defaults"]
+      ],
+      "cType": "UBYTE",
+      "defaultValue": 0
+    },
+	{
+      "key": "camplus_offset_x",
+      "label": "Default Offset X (in Pixels)",
+      "group": "CameraPlus (Default)",
+      "type": "slider",
+      "cType": "BYTE",
+      "defaultValue": 0,
+      "min": -128,
+      "max": 127
+    },
+	{
+      "key": "camplus_offset_y",
+      "label": "Default Offset Y (in Pixels)",
+      "group": "CameraPlus (Default)",
+      "type": "slider",
+      "cType": "BYTE",
+      "defaultValue": 8,
+      "min": -128,
+      "max": 127
+    },
+	{
+      "key": "camplus_deadzone_x",
+      "label": "Default Deadzone X (in Pixels)",
+      "group": "CameraPlus (Default)",
+      "type": "slider",
+      "cType": "BYTE",
+      "defaultValue": 0,
+      "min": -128,
+      "max": 127
+    },
+	{
+      "key": "camplus_deadzone_y",
+      "label": "Default Deadzone Y (in Pixels)",
+      "group": "CameraPlus (Default)",
+      "type": "slider",
+      "cType": "BYTE",
+      "defaultValue": 0,
+      "min": -128,
+      "max": 127
+    },
+	
+	
+	{
+      "key": "lookahead_behavior",
+      "label": "Look-Ahead Default Behavior",
+      "group": "CameraPlus (Look-Ahead)",
+      "type": "select",
+      "options": [
+		[3, "Disabled"],
+        [0, "Enabled (X Axis)"],
+        [1, "Enabled (Y Axis)"],
+		[2, "Enabled (X + Y Axis)"]
+      ],
+      "cType": "UBYTE",
+      "defaultValue": 3
+    },
+	{
+      "key": "lookahead_init",
+      "label": "Look-Ahead Initial Offsets",
+      "group": "CameraPlus (Look-Ahead)",
+      "type": "select",
+      "options": [
+        [0, "Start Scene with Look-Ahead Offsets"],
+        [1, "Start Scene with Default Offsets"]
+      ],
+      "cType": "UBYTE",
+      "defaultValue": 0
+	},
+	{
+      "key": "lookahead_speed_x",
+      "label": "Look-Ahead Speed X (Pixels per Frame)",
+      "group": "CameraPlus (Look-Ahead)",
+      "type": "select",
+      "options": [
+        [0, "Instant"],
+        [64, "Speed ¼ (Slower)"],
+		[32, "Speed ⅓"],
+		[16, "Speed ½"],
+        [1, "Speed 1"],
+		[2, "Speed 2"],
+		[3, "Speed 3"],
+		[4, "Speed 4"],
+		[5, "Speed 5"],
+		[6, "Speed 6"],
+		[7, "Speed 7"],
+		[8, "Speed 8 (Faster)"]
+      ],
+      "cType": "UBYTE",
+      "defaultValue": 1
+    },
+	{
+      "key": "lookahead_speed_y",
+      "label": "Look-Ahead Speed Y (Pixels per Frame)",
+      "group": "CameraPlus (Look-Ahead)",
+      "type": "select",
+      "options": [
+        [0, "Instant"],
+        [64, "Speed ¼ (Slower)"],
+		[32, "Speed ⅓"],
+		[16, "Speed ½"],
+        [1, "Speed 1"],
+		[2, "Speed 2"],
+		[3, "Speed 3"],
+		[4, "Speed 4"],
+		[5, "Speed 5"],
+		[6, "Speed 6"],
+		[7, "Speed 7"],
+		[8, "Speed 8 (Faster)"]
+      ],
+      "cType": "UBYTE",
+      "defaultValue": 1
+    },
+	{
+      "key": "lookahead_speed_f",
+      "label": "Look-Ahead Speed Fade-Out (Pixels per Frame)",
+      "group": "CameraPlus (Look-Ahead)",
+      "type": "select",
+      "options": [
+        [0, "Instant"],
+        [64, "Speed ¼ (Slower)"],
+		[32, "Speed ⅓"],
+		[16, "Speed ½"],
+        [1, "Speed 1"],
+		[2, "Speed 2"],
+		[3, "Speed 3"],
+		[4, "Speed 4"],
+		[5, "Speed 5"],
+		[6, "Speed 6"],
+		[7, "Speed 7"],
+		[8, "Speed 8 (Faster)"]
+      ],
+      "cType": "UBYTE",
+      "defaultValue": 1
+    },
+    {
+      "key": "lookahead_offset_x",
+      "label": "Look-Ahead Offset X (in Pixels)",
+      "group": "CameraPlus (Look-Ahead)",
+      "type": "slider",
+      "cType": "BYTE",
+      "defaultValue": 16,
+      "min": 0,
+      "max": 127
+    },
+    {
+      "key": "lookahead_offset_y",
+      "label": "Look-Ahead Offset Y (in Pixels)",
+      "group": "CameraPlus (Look-Ahead)",
+      "type": "slider",
+      "cType": "BYTE",
+      "defaultValue": 16,
+      "min": 0,
+      "max": 127
+    }
+  ]
+}
