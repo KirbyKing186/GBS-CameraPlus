@@ -1,7 +1,9 @@
 # CameraPlus
+
 Version 1.0.0
 
-## Documentation: 
+## Documentation:
+
 https://github.com/KirbyKing186/GBS-SetProjectileRenderOrder
 
 
