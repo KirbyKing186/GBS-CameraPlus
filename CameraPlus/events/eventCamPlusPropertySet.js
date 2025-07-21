@@ -46,53 +46,21 @@ const fields = [
     ],
   },
   {
-    type: "group",
+	key: "value",
+	label: "Value",
+	type: "value",
     width: "50%",
-    fields: [
-      {
-        key: "variable",
-	    label: "Variable",
-        type: "variable",
-        defaultValue: "LAST_VARIABLE",
-        conditions: [
-          {
-            key: "type",
-            eq: "variable",
-          },
-        ],
-      },
-      {
-        key: "value",
-	    label: "Number",
-        type: "number",
-        defaultValue: 0,
-        min: -32768,
-        max: 32767,
-        conditions: [
-          {
-            key: "type",
-            eq: "number",
-          },
-        ],
-      },
-	],
-  },
-  {
-	key: "type",
-	// Uses a Zero-Width Joiner for a label
-	label: "‍",
-	type: "selectbutton",
-	options: [
-	  ["number", "Number"],
-	  ["variable", "Variable"],
-	],
-	inline: true,
-	defaultValue: "number",
+	min: -32768,
+	max: 32767,
+	defaultValue: {
+	  type: "number",
+	  value: 0,
+	},
   },
 ];
 
 const compile = (input, helpers) => {
-  const { appendRaw, _addNL, getVariableAlias, _addComment } = helpers;
+  const { appendRaw, _addNL, getVariableAlias, _addComment, _declareLocal, _stackPush, _stackPop, variableSetToScriptValue } = helpers;
 	
   const fieldVarTypeLookup = {
     scroll_x: "INT16",
@@ -127,20 +95,13 @@ const compile = (input, helpers) => {
   };
   
   const fieldName = `_${input.field}`;
-  const numName = `${input.value}`;
-  const varName = getVariableAlias(input.variable);
+  const tmp0 = _declareLocal("tmp0", 1, true);
+  variableSetToScriptValue(tmp0, input.value);
   
-  if (input.type === "variable") {
-    _addComment("Set CameraPlus Field Set to Variable");
-    appendRaw(
-	`VM_SET_${fieldVarTypeLookup[input.field]} ${fieldName}, ${varName}`
-	)
-  } else {
-	_addComment("Set CameraPlus Field Set to Value");
-    appendRaw(
-    `VM_SET_CONST_${fieldVarTypeLookup[input.field]} ${fieldName}, ${numName}`
-	)
-  }
+  _addComment("Set CameraPlus Field Set to Value");
+  _stackPush(tmp0);
+  appendRaw(`VM_SET_${fieldVarTypeLookup[input.field]} ${fieldName}, ${tmp0}`)
+  _stackPop(1);
   _addNL();
 };
 

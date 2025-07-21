@@ -1,13 +1,13 @@
 # CameraPlus
 
-Version 1.0.0
+Version 1.1.0
 
-## Documentation:
+## Documentation
 
-https://github.com/KirbyKing186/GBS-SetProjectileRenderOrder
+https://github.com/KirbyKing186/GBS-CameraPlus
 
 
-## Credits:
+## Credits
 
 Developed and maintained by [KirbyKing186](https://github.com/KirbyKing186)
 
